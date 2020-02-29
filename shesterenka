@@ -1,0 +1,26 @@
+using System;
+
+namespace shesterenka
+{
+    class Program
+    {
+       
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int k = int.Parse(Console.ReadLine());
+            int l = (n / f(n, k) * k);
+            Console.WriteLine($"{ l}");
+        }
+        public static int f(int a, int b) {
+
+            if (a==0) { return b; }
+            if (b == 0) { return a; }
+            if (a >= b) { return f(a % b , b); }
+            else { return f(a , b % a); }
+
+        }
+      
+        
+    }
+}

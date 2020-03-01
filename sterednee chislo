@@ -1,0 +1,33 @@
+using System;
+
+namespace srednee chislo
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a, b, c, d;
+            a = int.Parse(Console.ReadLine());
+            b = int.Parse(Console.ReadLine());
+            c = int.Parse(Console.ReadLine());
+            d = int.Parse(Console.ReadLine());
+            int s = fun1(b, d);
+            int m = (a * (s / b) + (c * (s / d)));
+            int n = fun1(b, d);
+            Console.WriteLine($"{m / fun(m, n)} , {n / fun(m, n)}") ;
+   
+        }
+     
+        public static int fun(int a, int b) {
+            if (a==0) { return b; }
+            if (b == 0) { return a; }
+            if (a >= b) { return fun(a % b, b); }
+            else { return fun(a, b%a); }
+          
+        }
+        public static int fun1(int a, int b) {
+            return (a * b) / fun(a, b);
+        }
+    }
+}
